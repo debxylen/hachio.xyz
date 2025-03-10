@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>
+      HACHIO - Your Own Decentralized Pet!
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <script>
+      tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F6B352',
+                        secondary: '#8B4513'
+                    },
+                    borderRadius: {
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <style>
+      html, body {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+
+
+        .story-image {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .story-image.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: #F6B352;
+            z-index: 50;
+            transition: width 0.3s ease-out;
+        }
+
+        * {
+            scroll-behavior: smooth;
+        }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900 min-h-screen">
+    <div class="progress-bar" id="scrollProgress">
+    </div>
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-40 border-b border-gray-100">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <div class="font-['Fredoka'] text-2xl text-primary">
+            Hachio
+          </div>
+          <div class="flex items-center space-x-8">
+            <a class="hover:text-primary transition-colors cursor-pointer" href="#chart">
+              Chart
+            </a>
+            <a class="hover:text-primary transition-colors cursor-pointer" href="#buy">
+              Buy
+            </a>
+            <a class="hover:text-primary transition-colors cursor-pointer" href="https://t.me/follow_your_leader_hachio">
+              <i class="ri-telegram-line">
+              </i>
+            </a>
+            <a class="hover:text-primary transition-colors cursor-pointer" href="https://x.com/LeaderReesen">
+              <i class="ri-twitter-x-line">
+              </i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <header class="pt-32 pb-20 relative overflow-hidden">
+      <div class="absolute inset-0 bg-[url('banner.png')] bg-cover bg-center opacity-20">
+      </div>
+      <div class="container mx-auto px-6 relative">
+        <div class="max-w-2xl">
+          <h1 class="font-['Fredoka'] text-6xl mb-6 text-primary">
+            Hachio
+          </h1>
+          <p class="text-2xl mb-8 text-gray-600">
+            🐕 HACHIO is the crypto community's decentralized pet, blending the excitement of digital finance with the joy of virtual companionship! 🚀
+          </p>
+          <div class="flex space-x-4">
+            <a href="https://pump.fun/coin/UVqosK9sDsbvzw77cK4wFkHn8zgDfMogntEFuvVpump">
+              <button class="bg-primary text-gray-900 px-8 py-3 !rounded-button font-semibold hover:bg-primary/90 transition-colors cursor-pointer whitespace-nowrap">
+                Buy
+                        Now
+              </button>
+            </a>
+            <a href="#story">
+              <button class="border border-primary text-primary px-8 py-3 !rounded-button font-semibold hover:bg-primary/10 transition-colors cursor-pointer whitespace-nowrap">
+                Learn
+                        More
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="py-20 bg-gray-50" id="story">
+      <div class="container mx-auto px-6">
+        <h2 class="font-['Fredoka'] text-4xl font-bold text-center mb-16">
+          The Story of Loyalty
+        </h2>
+        <div class="space-y-32">
+          <div class="story-container flex items-center">
+            <div class="w-1/2 pr-12">
+              <h3 class="text-2xl font-bold mb-4 text-primary">
+                Birth of a Legend (1923)
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                On November 10, 1923, a special Akita puppy was born in
+                            Odate, Akita Prefecture. This puppy would later become known as Hachiko, destined to become
+                            a symbol of loyalty that would touch hearts worldwide.
+              </p>
+            </div>
+            <div class="w-1/2 story-image">
+              <img class="rounded-lg shadow-xl w-full" src="content\1def3c8c3059e52e8f190992c6d59e6a.jpg"/>
+            </div>
+          </div>
+          <div class="story-container flex items-center flex-row-reverse">
+            <div class="w-1/2 pl-12">
+              <h3 class="text-2xl font-bold mb-4 text-primary">
+                The Adoption (1924)
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                Professor Hidesaburo Ueno, a distinguished agricultural
+                            scientist at Tokyo Imperial University, welcomed young Hachiko into his home. The bond
+                            between them was immediate and profound.
+              </p>
+            </div>
+            <div class="w-1/2 story-image">
+              <img class="rounded-lg shadow-xl w-full" src="content\8e0aab85f927d66610fbf8518c503a3d.jpg"/>
+            </div>
+          </div>
+          <div class="story-container flex items-center">
+            <div class="w-1/2 pr-12">
+              <h3 class="text-2xl font-bold mb-4 text-primary">
+                Morning Ritual (1924-1925)
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                Every morning, Hachiko would accompany Professor Ueno
+                            to Shibuya Station. This daily ritual became a cherished routine that strengthened their
+                            extraordinary bond.
+              </p>
+            </div>
+            <div class="w-1/2 story-image">
+              <img class="rounded-lg shadow-xl w-full" src="content\fd8630c5290e5a70bef21cdfdb110643.jpg"/>
+            </div>
+          </div>
+          <div class="story-container flex items-center flex-row-reverse">
+            <div class="w-1/2 pl-12">
+              <h3 class="text-2xl font-bold mb-4 text-primary">
+                Evening Returns (1924-1925)
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                Each evening at precisely 4 PM, Hachiko would arrive at
+                            Shibuya Station to greet his beloved master, their reunions filled with joy and affection.
+              </p>
+            </div>
+            <div class="w-1/2 story-image">
+              <img class="rounded-lg shadow-xl w-full" src="content\3fdeb88765cf0128adcf6c6578c2536f.jpg"/>
+            </div>
+          </div>
+          <div class="story-container flex items-center">
+            <div class="w-1/2 pr-12">
+              <h3 class="text-2xl font-bold mb-4 text-primary">
+                The Last Goodbye (1925)
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                On May 21, 1925, Professor Ueno suffered a cerebral
+                            hemorrhage while at work. That evening, Hachiko waited at the station, unaware it would be
+                            the beginning of a nine-year vigil.
+              </p>
+            </div>
+            <div class="w-1/2 story-image">
+              <img class="rounded-lg shadow-xl w-full" src="content\e7e846c2e52e2e4338e5592b86a97333.jpg"/>
+            </div>
+          </div>
+          <div class="story-container flex items-center flex-row-reverse">
+            <div class="w-1/2 pl-12">
+              <h3 class="text-2xl font-bold mb-4 text-primary">
+                Unwavering Faith (1925-1930)
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                Despite attempts to relocate him, Hachiko returned to
+                            Shibuya Station daily. Station workers and vendors began providing him food and shelter,
+                            touched by his dedication.
+              </p>
+            </div>
+            <div class="w-1/2 story-image">
+              <img class="rounded-lg shadow-xl w-full" src="content\777289eb10ea0106a3b56972deb26b15.jpg"/>
+            </div>
+          </div>
+          <div class="story-container flex items-center">
+            <div class="w-1/2 pr-12">
+              <h3 class="text-2xl font-bold mb-4 text-primary">
+                National Recognition (1930-1934)
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                Hachiko's story gained national attention after a major
+                            newspaper article. He became a symbol of loyalty, inspiring countless visitors who came to
+                            witness his daily vigil.
+              </p>
+            </div>
+            <div class="w-1/2 story-image">
+              <img class="rounded-lg shadow-xl w-full" src="content\e82c6c2e649df574eb81e5d3d2a95f5b.jpg"/>
+            </div>
+          </div>
+          <div class="story-container flex items-center flex-row-reverse">
+            <div class="w-1/2 pl-12">
+              <h3 class="text-2xl font-bold mb-4 text-primary">
+                Final Days (1935)
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                On March 8, 1935, Hachiko was found peacefully resting
+                            near Shibuya Station. His unwavering loyalty had touched countless hearts during his nearly
+                            decade-long wait.
+              </p>
+            </div>
+            <div class="w-1/2 story-image">
+              <img class="rounded-lg shadow-xl w-full" src="content\525592be6e6b6a5f67813790d311f012.jpg"/>
+            </div>
+          </div>
+          <div class="story-container flex items-center">
+            <div class="w-1/2 pr-12">
+              <h3 class="text-2xl font-bold mb-4 text-primary">
+                Eternal Legacy (1935-Present)
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                Hachiko's legacy lives on through the famous bronze
+                            statue at Shibuya Station, countless books, films, and in the hearts of millions worldwide
+                            who are inspired by his extraordinary devotion.
+              </p>
+            </div>
+            <div class="w-1/2 story-image">
+              <img class="rounded-lg shadow-xl w-full" src="content\b26483c5c85b3244911c86fb7fb54a0a.jpg"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-20" id="chart">
+      <div class="container mx-auto px-6">
+        <h2 class="font-['Fredoka'] text-4xl font-bold text-center mb-16">
+          Chart 📈
+        </h2>
+        <div class="bg-gray-50 p-8 rounded-lg shadow-lg mb-12">
+          <div class="w-full h-[60vh]" id="priceChart">
+            <div id="price-chart-widget-container" style="width: 100%; height:100%">
+              <script type="text/javascript">
+                (function() {
+                            function loadWidget() {
+                              if (typeof window.createMyWidget === 'function') {
+                                window.createMyWidget('price-chart-widget-container', {
+                                  autoSize: true,
+                              chainId: 'solana',
+                              tokenAddress: 'UVqosK9sDsbvzw77cK4wFkHn8zgDfMogntEFuvVpump',
+                              defaultInterval: '5',
+                              timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone ?? 'Etc/UTC',
+                              theme: 'moralis',
+                              locale: 'en',
+                              backgroundColor: '#ffffff',
+                              gridColor: '#bebebe',
+                              textColor: '#000000',
+                              candleUpColor: '#4CE666',
+                              candleDownColor: '#E64C4C',
+                              hideLeftToolbar: false,
+                              hideTopToolbar: false,
+                              hideBottomToolbar: false
+                                });
+                              } else {
+                                console.error('createMyWidget function is not defined.');
+                              }
+                            }
+                    
+                            if (!document.getElementById('moralis-chart-widget')) {
+                              var script = document.createElement('script');
+                              script.id = 'moralis-chart-widget';
+                              script.src = 'https://moralis.com/static/embed/chart.js';
+                              script.type = 'text/javascript';
+                              script.async = true;
+                              script.onload = loadWidget;
+                              document.body.appendChild(script);
+                            } else {
+                              loadWidget();
+                            }
+                          })();
+              </script>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <!--<div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+                    <p class="text-2xl font-bold text-primary mb-2">$</p>
+                    <p class="text-gray-600">Current Price</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+                    <p class="text-2xl font-bold text-green-500 mb-2">+%</p>
+                    <p class="text-gray-600">24h Change</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+                    <p class="text-2xl font-bold text-primary mb-2">$</p>
+                    <p class="text-gray-600">Market Cap</p>
+                </div>-->
+        </div>
+      </div>
+    </section>
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="font-['Fredoka'] text-4xl font-bold text-center mb-16">
+          Tokenomics! 🎮
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-bold mb-6 text-primary">
+              Supply & Volatility 📊
+            </h3>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600">
+                  Total Supply
+                </span>
+                <span class="font-bold">
+                  1,000,000,000
+                </span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600">
+                  Volatility
+                </span>
+                <span class="font-bold">
+                  <0.08
+                </span>
+              </div>
+            </div>
+            <div class="mt-8">
+              <div class="w-full bg-gray-200 rounded-full h-4 mb-4">
+                <div class="bg-primary h-4 rounded-full" style="width: 83.75%">
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-4 text-sm">
+                <div class="text-gray-600">
+                  <span class="inline-block w-3 h-3 bg-primary rounded-full mr-2">
+                  </span>
+                  Pooled HACHIO (Over 80%!)
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-bold mb-6 text-primary">
+              Liquidity 🌊
+            </h3>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600">
+                  Current Approx Liquidity
+                </span>
+                <span class="font-bold">
+                  ~ $10K
+                </span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-600">
+                  Locked Liquidity
+                </span>
+                <span class="font-bold">
+                  ~ $4.3K
+                </span>
+              </div>
+            </div>
+            <div class="mt-8">
+              <div class="w-full bg-gray-200 rounded-full h-4 mb-4">
+                <div class="bg-primary h-4 rounded-full" style="width: 40%">
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-4 text-sm">
+                <div class="text-gray-600">
+                  <span class="inline-block w-3 h-3 bg-primary rounded-full mr-2">
+                  </span>
+                  Locked Liquidity
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-20">
+      <div class="container mx-auto px-6">
+        <h2 class="font-['Fredoka'] text-4xl font-bold text-center mb-16">
+          Why Hold $HACHIO? 🤔
+        </h2>
+        <div class="flex justify-center items-center">
+          <div class="bg-gray-50 p-8 w-[75vw] rounded-lg shadow-lg">
+            <div class="space-y-4">
+              <div class="flex justify-center items-center">
+                <i class="ri-heart-line text-primary text-xl mr-4 mt-1">
+                </i>
+                <p class="text-gray-600">
+                  Join the most loyal community in crypto! We're not just holders, we're frens! 🤗
+                </p>
+              </div>
+              <div class="flex justify-center items-center">
+                <i class="ri-fire-line text-primary text-xl mr-4 mt-1">
+                </i>
+                <p class="text-gray-600">
+                  A chill dev team, determined to make $HACHIO better for you! 📈
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 text-center">
+          <p class="text-gray-400 max-w-2xl mx-auto">
+            Remember: We're here for the memes and good times!! 🎮
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="py-20" id="buy">
+      <div class="container mx-auto px-6">
+        <h2 class="font-['Fredoka'] text-4xl font-bold text-center mb-16">
+          How to Buy Hachio
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-gray-50 shadow-lg p-8 rounded-lg transform hover:scale-105 transition-transform">
+            <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6">
+              <i class="ri-wallet-3-line text-primary text-2xl">
+              </i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">
+              Step 1: Get a Frenly Wallet 🎮
+            </h3>
+            <p class="text-gray-600">
+              Download OKX Wallet, or any other cool Solana wallet like Phantom.
+                        🔒
+            </p>
+          </div>
+          <div class="bg-gray-50 shadow-lg p-8 rounded-lg transform hover:scale-105 transition-transform">
+            <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6">
+              <i class="ri-coins-line text-primary text-2xl">
+              </i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">
+              Step 2: Get Some SOL 🌞
+            </h3>
+            <p class="text-gray-600">
+              Buy SOL from your favorite exchange, if you don't have any. Or, bridge assets from other chains onto Solana: Fast & cheap, unlike other chains! 🚀
+            </p>
+          </div>
+          <div class="bg-gray-50 shadow-lg p-8 rounded-lg transform hover:scale-105 transition-transform">
+            <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6">
+              <i class="ri-exchange-line text-primary text-2xl">
+              </i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">
+              Step 3: Wen Moon? Now Moon! 🌙
+            </h3>
+            <p class="text-gray-600">
+              Visit
+              <a class="text-primary" href="https://pump.fun/coin/UVqosK9sDsbvzw77cK4wFkHn8zgDfMogntEFuvVpump">
+                pump.fun
+              </a>
+              or
+              <a class="text-primary" href="https://jup.ag/swap/SOL-UVqosK9sDsbvzw77cK4wFkHn8zgDfMogntEFuvVpump">
+                Jupiter
+              </a>
+              , connect wallet, swap SOL for $HACHIO! Much wow!
+                        🎉
+            </p>
+          </div>
+        </div>
+        <div class="mt-12 bg-gray-50 shadow-lg p-6 rounded-lg">
+          <p class="text-gray-400 text-center">
+            Solana Address:
+            <span class="text-primary">
+              UVqosK9sDsbvzw77cK4wFkHn8zgDfMogntEFuvVpump
+            </span>
+            <button class="ml-2 text-primary hover:text-primary/80 transition-colors cursor-pointer" onclick="copyAddress()">
+              <i class="ri-file-copy-line">
+              </i>
+            </button>
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-gray-50 py-12">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col items-center text-center">
+          <div class="font-['Fredoka'] text-3xl text-primary mb-6">
+            Hachio
+          </div>
+          <div class="flex space-x-6 mb-8">
+            <a class="text-gray-600 hover:text-primary transition-colors cursor-pointer" href="https://t.me/follow_your_leader_hachio">
+              <i class="ri-telegram-line text-2xl">
+              </i>
+            </a>
+            <a class="text-gray-600 hover:text-primary transition-colors cursor-pointer" href="https://x.com/LeaderReesen">
+              <i class="ri-twitter-x-line text-2xl">
+              </i>
+            </a>
+          </div>
+          <p class="text-gray-400 max-w-2xl">
+            $HACHIO is a fun meme coin that's about as useful as a chocolate
+                    teapot! 🍫 No fancy promises, no complicated deals - just pure entertainment and much wow!
+                    Remember: 1 $HACHIO = 1 $HACHIO forever! 🐕 Not financial advice, DYOR and only invest what you are willing to! 🎮
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+            const storyImages = document.querySelectorAll('.story-image');
+            const progressBar = document.getElementById('scrollProgress');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.3 });
+            storyImages.forEach(image => observer.observe(image));
+            window.addEventListener('scroll', () => {
+                const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (window.scrollY / windowHeight) * 100;
+                progressBar.style.width = scrolled + '%';
+            });
+        });
+        function copyAddress() {
+            navigator.clipboard.writeText('UVqosK9sDsbvzw77cK4wFkHn8zgDfMogntEFuvVpump');
+            const button = event.target.closest('button');
+            const originalIcon = button.innerHTML;
+            button.innerHTML = '<i class="ri-check-line"></i>';
+            setTimeout(() => {
+                button.innerHTML = originalIcon;
+            }, 2000);
+        }
+    </script>
+  </body>
+</html>
